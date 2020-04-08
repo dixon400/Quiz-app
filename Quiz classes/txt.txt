@@ -1,0 +1,21 @@
+From Muyideen Oladipupo to Everyone:  08:55 PM
+public function startQuestion(array $question, array $answers)
+    {
+        $this->questions = $question;
+        foreach ($question as $askeQuestion) {
+            $ask = readline($askQuestion);
+            Quiz::$score++;
+            
+        }
+
+        $this->answers = $answers;
+        print_r($question);
+        foreach ($answers as $askAnswer) {
+            $singleAnswer;
+        }
+         if ($ask === $askAnswer) {
+             echo "\nYour Total Score is " . Quiz::$score ."\n";
+         } else {
+             echo "\nYour Total Score is " . Quiz::$score . "\n";
+         }
+    }
