@@ -2,7 +2,7 @@
 require "question.php";
 
 class Functionality extends Questions
-{
+{   
     public $index = -1;
     public function array_push_assoc($array, $ind, $quest, $key, $value)
     {
@@ -13,6 +13,7 @@ class Functionality extends Questions
     {
 
         $i = readline("please enter the question here: ");
+        
         $this->index++;
         array_push($this->questions, $i);
         for ($ind = 0; $ind < 4; $ind++) {
@@ -39,9 +40,30 @@ class Functionality extends Questions
         return $this->questions;
     }
 
+    public function playerList(){
+        array_push($this->playerList, $this->player);
+        return implode( $this->playerList, "\n");
+    }
+
+    public function playerScoreList(){
+            array_push($this->playerScoreList,array($this->player=>$this->playerScore));
+            return $this->playerScoreList;
+        }
+    
+    public function highScore(){
+        $this->playerScore = $this->highScore;
+        if ($this->playerScore > $this->playerScore){
+            echo "highest score is " . $this->highScore;
+        }
+    }
+
+
+
     public function questions()
-    {
-        
+    {      $name = readline("Enter your name: ");
+            $this->player = $name;
+            $this->playerList();
+            
             foreach ($this->answers as $index => $question) {
                 
                 foreach ($question as $questions => $answers) {

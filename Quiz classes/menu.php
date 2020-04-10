@@ -1,19 +1,18 @@
 <?php
 require "function.php";
 
-// class Menu extends Functionality
-// {
-// }
-
 function menuFunction()
-{
+{   echo "*****                   ********\n";
     echo "*****      QUIZ APP     ********\n";
     echo "*****                   *******\n";
     echo "Press 1: To create quiz\n";
     echo "Press 2: To view all quiz\n";
     echo "Press 3: To delete a quiz\n";
     echo "Press 4: To start a quiz\n";
-    echo "Press 5: Quit\n";
+    echo "Press 5: To list players\n";
+    echo "Press 6: To list scores\n";
+    echo "Press 7: To view high score\n";
+    echo "Press 8: Quit\n";
 }
 $ques = new Functionality;
 while (true) {
@@ -38,11 +37,28 @@ while (true) {
                 $ques->questions();
                 break;  
             }  
+
+
         case 5: {
-                $ques->Quit();
-                break;
-        
+            echo ($ques->playerList());
+            break;
             }
+
+        case 6:{
+            print_r($ques->playerScoreList());
+            break;
+            }
+
+        case 7: {
+            echo $ques->highScore();
+            break;
+            }
+
+        case 8: {
+            $ques->Quit();
+            break;
+            }
+        
         default: {
                 echo "\n\n\e[0;31mNo / wrong choice is entered. Please provide a valid choice.\e[0m\n\n";
             }

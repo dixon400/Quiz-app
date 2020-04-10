@@ -10,6 +10,11 @@ class Questions
     public $score = 0;
     public $ind = 0;
     public $ansIndex = 0;
+    public $player;
+    public $playerList = [];
+    public $playerScore;
+    public $playerScoreList = [];
+    public $highScore;
 
     public function result(){
         
@@ -19,10 +24,12 @@ class Questions
 
             $percentage = ($i / $c) * 100;
 
-            echo "Your Score is  : ".$percentage."% \n";
+            echo "$this->player  : ".$percentage."% \n";
             $this->score = 0;
             $this->ind = 0;
             $this->ansIndex = -1;
+            $this->playerScore = $percentage;
+            $this->playerScoreList();
         }
     
     }
